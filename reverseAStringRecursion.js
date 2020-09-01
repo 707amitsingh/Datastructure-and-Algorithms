@@ -11,8 +11,15 @@ const reverseString = (str) => {
       }
 }
 
+const reverseString2 = (str, index=0) => {
+  if(str.length === 1) return str
+  return reverseString(str.substr(1), index++) + str[index]
+}
+
 console.time()
-const result = reverseString('Amit singh choudhary sdbckauvsdkcvakdschj')
+const result = reverseString2('Amit singh choudhary sdbckauvsdkcvakdschj')
 console.timeEnd()
+
+
 
 console.log(result)

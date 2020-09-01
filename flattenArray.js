@@ -1,4 +1,4 @@
-var arr = ['a1',  'ab', 'bc', ['abc', 'bca',['abcd']], ['abc', 'bca',['abcd']]]
+var arr = ['a1',  'ab', 'bc', ['abc', 'bca',[[[[['abcd']]]]]], ['abc', 'bca',['abcd']]]
 
 let finalFlatten = []
 
@@ -6,8 +6,7 @@ let finalFlatten = []
 const flatten = (arr) => {
     const newArray = arr.map(el => {
         if(Array.isArray(el)) {
-            let subArr = [...el]
-            flatten(subArr)
+            flatten([...el])
         } else {
             finalFlatten.push(el)
         }

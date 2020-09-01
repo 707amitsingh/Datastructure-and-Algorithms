@@ -4,6 +4,20 @@ const isPelindrom1 = (str) => {
     return reversed === str
 }
 
+const isPalindrom3 = (str) => {
+    let length = str.length
+    let result = false
+    for(let i = 0; i < length; i++) {
+        if(i >= length - i) break
+        if(str.charAt(i) === str.charAt(length - i - 1)) {
+            result = true
+        } else {
+            return false
+        }
+    }
+    return result
+}
+
 
 // Not better - more then required comparisions
 const isPelindrom2 = (str) => {
@@ -16,4 +30,4 @@ const isPelindrom2 = (str) => {
     })
 }
 
-console.log(isPelindrom2('aba'))
+console.log(isPalindrom3('amitima'))
